@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+               @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+        .col-md-6{
+        margin-left: 20%;
+        /* margin-top: 10%; */
+       }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+   background-color: #f3f5f9;
+}
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar{
+  width: 200px;
+  height: 100%;
+  background: #4b4276;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.wrapper .sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+  color: #bdb8d7;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #594f8d;
+}
+    
+.wrapper .sidebar ul li:hover a{
+  color: #fff;
+}
+ 
+.wrapper .sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+  display: block;
+  width: 40px;
+  background: #594f8d;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #bdb8d7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-right: 10%;
+  margin-left: -10%;
+  margin-top: 3%;
+}
+
+.wrapper .main_content .header{
+  padding: 20px;
+  background: #fff;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+}
+  .main {
+            margin-left: -150%;
+            margin-right: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 560%;
+            margin-top: 5%;
+        }
+
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            background-color: #f8f9fa;
+        }
+
+        .card-header {
+            background-color: #594f8d;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+            padding: 10px;
+        }
+
+        /* .form-select,
+        input[type="text"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            transition: 0.3s ease-in-out;
+        }
+
+        .form-select:focus,
+        input:focus,
+        textarea:focus {
+            border-color: #594f8d;
+            box-shadow: 0 0 8px rgba(89, 79, 141, 0.3);
+            outline: none;
+        } */
+        .form-select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.form-select:focus,
+input:focus,
+textarea:focus {
+    border-color: #594f8d;
+    box-shadow: 0 0 8px rgba(89, 79, 141, 0.3);
+    outline: none;
+}
+
+
+        textarea {
+            resize: none;
+        }
+
+        .btn-primary {
+            background-color: #594f8d;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ebe4ed;
+            padding: 12px;
+            border-radius: 10px;
+            width: 250px;
+            transition: 0.3s ease-in-out;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .btn-primary:hover {
+            background-color: #453a75;
+        }
+        .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 8%;
+    z-index: 1000;
+    background-color: #f8f9fa !important; /* Light background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #594f8d !important; /* Blue brand color */
+}
+
+.btn-outline-success {
+    border-color: #770b76 !important;
+    /* color: #6ab12b !important; */
+    /* transition: all 0.3s ease; */
+    background-color: #594f8d;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ebe4ed;
+    /* padding: 12px; */
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    margin-top:-8px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-outline-success:hover {
+    background-color: #990dc0 !important;
+    color: white !important;
+}
+
+.container-fluid {
+    padding: 10px 20px;
+}
+
+#navbarNav {
+    padding-left: 85%;
+    margin-top: -2%;
+    }
+    /* header */
+       
+    </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">REKSHA</a>
+              <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> -->
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <form class="container-fluid justify-content-start" action="/logoutadmin/" method="post">
+                    {% csrf_token %}
+                    <input  class="btn btn-outline-success me-2" type="submit" value="Log out">
+                  </form>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        
+        <div class="wrapper">
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <ul>
+                    <li><a href="{% url 'user' %}">Emergency situation</a></li>
+                    <li><a href="{% url 'trackuser' %}">Tracking</a></li>
+                    <li><a href="{% url 'ViewProfile' %}">View Profile</a></li>
+                    <li><a href="{% url 'EditProfile' %}">Update Profile</a></li>
+                    <li><a href="{% url 'feed' %}">Feedback & Complaints</a></li>
+                    <li><a href="{% url 'userreplies' %}">Replies</a></li>
+                </ul> 
+                <div class="social_media">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          
+    <div class="col-md-6">
+        <div class="main">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+                <h4>Feedback & Complaint Form</h4>
+            </div>
+            <div class="card-body">
+                <form action="/feedtable/" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="txtname" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" name="txtemail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="txtsub" placeholder="Enter the subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="5"  name="txtmes" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>   
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>REKSHA</title>
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("{% static 'images/20.jpg' %}");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<!-- <div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><b>REKSHA</b></a>-->
+    <!-- Right-sided navbar links -->
+    <!-- <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#service" class="w3-bar-item w3-button"><i class=""></i>SERVICES</a>
+      <a href="#gallery" class="w3-bar-item w3-button"><i class="fa fa-th"></i>GALLERY</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a href="#login" class="w3-bar-item w3-button"><i class="fa fa-user"></i>LOGIN</a>-->
+      <!-- <div class="dropdown"> -->
+        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          LOGIN
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Admin</a></li>
+          <li><a class="dropdown-item" href="#">Rescue Staff</a></li>
+          <li><a class="dropdown-item" href="#">User</a></li>
+        </ul> 
+      </div> 
+    </div>-->
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <!-- <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div> --> 
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><b>REKSHA</b></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#service" class="w3-bar-item w3-button"><i class=""></i>SERVICES</a>
+      <a href="#gallery" class="w3-bar-item w3-button"><i class="fa fa-th"></i>GALLERY</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+
+      <!-- Dropdown for LOGIN -->
+      <div class="w3-dropdown" style="display: inline-block;">
+        <a href="javascript:void(0)" class="w3-bar-item w3-button" onclick="toggleDropdown()">
+          <i class="fa fa-user"></i> LOGIN
+        </a>
+        <div id="loginDropdown" class="w3-dropdown-content w3-bar-block w3-card-4" style="display:none; position: absolute;">
+          <a href="{% url 'login' %}" class="w3-bar-item w3-button">User</a>
+          <a href="{% url 'loginres' %}" class="w3-bar-item w3-button">Rescue</a>
+          <a href="{% url 'adminlog' %}" class="w3-bar-item w3-button">Admin</a>
+        </div>
+      </div>
+      <!-- End of Dropdown -->
+
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+// Function to toggle the dropdown visibility
+function toggleDropdown() {
+  var dropdown = document.getElementById("loginDropdown");
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+  } else {
+    dropdown.style.display = "block";
+  }
+}
+
+// Close the dropdown if the user clicks anywhere outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.w3-bar-item') && !event.target.matches('.w3-dropdown-content')) {
+    var dropdowns = document.getElementsByClassName("w3-dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      dropdowns[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#service" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
+  <a href="#gallery" onclick="w3_close()" class="w3-bar-item w3-button">GALLERY</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+  <a href="#login" onclick="w3_close()" class="w3-bar-item w3-button">LOGIN</a>
+
+  <!-- <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div> -->
+
+
+
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Every soul matters..</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Every soul matters..</span><br>
+    <span class="w3-large">Rescue: the noble art of restoring hope,one life at a time.</span>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+  </div> 
+
+</header>
+
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h3 class="w3-center">ABOUT US</h3>
+  <p class="w3-center w3-large">As part of the rescue forces, we perform critical functions to save lives and reduce harm during emergencies.We collaborate with various other agencies and brings an effective result on this field.
+    We work to remove individuals from dangerous situations, like collapsed buildings or disaster zones, using specialized tools and techniques. 
+    Ensuring the safe evacuation of people from hazardous areas is a priority, especially for vulnerable groups like children, the elderly, those with disabilities, and ladies, guiding them to secure locations. 
+    As a first responder, we provide immediate medical assistance—whether it's administering first aid, performing CPR, or offering advanced care—to stabilize victims before they receive further treatment.
+    In the aftermath of disasters, We focus on recovery operations, which involve retrieving and preserving property, remains, or hazardous materials, helping to bring closure and facilitate recovery efforts. 
+    Effective coordination and communication are key to what we do, collaborating with various agencies, establishing command centers, and sharing real-time updates to ensure resources are deployed efficiently.
+    Each of these functions allows us to respond swiftly and effectively, making a tangible difference for those affected by crises.</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+   
+    
+  </div>
+</div>
+
+<!-- Team Section --> 
+<div class="w3-container" style="padding:128px 16px" id="service">
+  <h3 class="w3-center">THE TEAM</h3>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="{% static 'images/1.jpg' %}" alt="fire" style="width:100%">
+        <div class="w3-container">
+          <h3>Fire Force</h3>
+         
+          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="{% static 'images/14.jpg' %}" alt="police" style="width:100%;height: 237px;" >
+        <div class="w3-container">
+          <h3>Police</h3>
+          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="{% static 'images/6.jpg' %}" alt="coast" style="width:100%">
+        <div class="w3-container">
+          <h3>Coast Guard</h3>
+          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="{% static 'images/15.jpg' %}" alt="ndrf" style="width:100%;height: 237px;">
+        <div class="w3-container">
+          <h3>NDRF</h3>
+          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="{% static 'images/18.jpg' %}" alt="health" style="width:100%;">
+          <div class="w3-container">
+            <h3>Health Care</h3>
+            
+          </div>
+        </div>
+      </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="{% static 'images/17.jpg' %}" alt="sdma" style="width:100%">
+          <div class="w3-container">
+            <h3>SDMA</h3>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+  </div>
+</div>
+
+
+
+
+
+  
+  
+
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">44+</span>
+    <br>Rescue Team
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">37+</span>
+    <br>Projects Done
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">30+</span>
+    <br>Success
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="w3-container" style="padding:128px 16px" id="gallery">
+  <h3 class="w3-center">GALLERY</h3>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="{% static 'images/2.jpg' %}" style="width:100%">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static 'images/11.jpg' %}" style="width:100%">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static 'images/13.jpg' %}" style="width:100%">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static 'images/5.jpg' %}" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="{% static 'images/7.jpg' %}" style="width:100%">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static 'images/1.jpg' %}" style="width:100%">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static 'images/9.jpg' %}" style="width:100%">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="{% static 'images/10.jpg' %}" style="width:100%">
+    </div>
+  </div>
+</div>
+
+
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch.</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Malappuram,Kerala</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +91 0000 00 0000</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: rekshaproject@gmail.com</p>
+    <br>
+    <form action="/commonfeed/" method="post">
+      {% csrf_token %}
+      <p><input class="w3-input w3-border" type="text" name="txtname" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" name="txtemail" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" name="txtsub" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" name="txtmes" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="" title="BOSS" target="_blank" class="w3-hover-text-green">BOSS</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>

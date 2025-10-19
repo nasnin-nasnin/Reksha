@@ -1,0 +1,208 @@
+{% extends "Reksha/adminnav.html" %}
+{% block content %}
+<style>
+    .col-md-8{
+     margin-left: 4%;
+     margin-top: 2%;
+     margin-bottom: 10%;
+     
+     
+    }
+    /* .container{
+      width:1000px;
+    } */
+    /* .card-body{
+        max-width: 2000px;
+    } */
+    .form-label {
+        max-width: 100%;
+    }
+    
+ </style>
+
+
+<div class="col-md-8">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white text-center">
+            <h4>Add staff</h4>
+        </div>
+        <div class="card-body">
+            <form action="/addstafftab/" method="post">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="rescueForces" class="form-label">Name</label>
+                <select class="form-select" name="txtres" id="rescueForces" required>
+                    <option value="POLICE">POLICE</option>
+                    <option value="FIRE AND RESCUE SERVICE">FIRE AND RESCUE SERVICE</option>
+                    <option value="COAST GUARD">COAST GUARD</option>
+                    <option value="NDRF">NDRF</option>
+                    <option value="VOLUNTEER">VOLUNTEER</option>
+                    <option value="SDMA">SDMA</option>
+                    <option value="HEALTHCARE & MEDICAL SERVICE">HEALTHCARE & MEDICAL SERVICE</option>
+                    <option value="TRAUMA CARE">TRAUMA CARE</option>
+                </select>
+              </div> 
+              <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea id="address" rows="3" name="txtaddess" placeholder="Enter your address" required></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="contact" class="form-label">Contact Number</label>
+                <input type="tel" id="contact" name="txtnum" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required>
+              </div>
+              <div class="mb-3">
+                <label for="district" class="form-label">District</label>
+                <select id="district" name="txtdis" required>
+                    <option value="" selected>-- Select District --</option>
+                    <option value="Alappuzha">Alappuzha</option>
+                    <option value="Ernakulam">Ernakulam</option>
+                    <option value="Idukki">Idukki</option>
+                    <option value="Kannur">Kannur</option>
+                    <option value="Kasaragod">Kasaragod</option>
+                    <option value="Kollam">Kollam</option>
+                    <option value="Kottayam">Kottayam</option>
+                    <option value="Kozhikode">Kozhikode</option>
+                    <option value="Malappuram">Malappuram</option>
+                    <option value="Palakkad">Palakkad</option>
+                    <option value="Pathanamthitta">Pathanamthitta</option>
+                    <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                    <option value="Thrissur">Thrissur</option>
+                    <option value="Wayanad">Wayanad</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">City</label>
+                <input type="text" id="name" name="txtcty" placeholder="Enter city name" required>
+              </div>
+              <div class="mb-3">
+                <label for="pincode" class="form-label">Pincode</label>
+                <input  type="text" id="pincode" name="pincode"  maxlength="6" pattern="[0-9]{6}" required placeholder="123456">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email ID</label>
+                <input type="email" id="email" name="txtemail" placeholder="Enter your email" required>
+              </div> 
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="txtuser" placeholder="Choose a username" required>
+              </div>   
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="txtpass" placeholder="Enter your password" required>
+              </div>               
+              <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Add</button>
+              </div>
+            </form>
+        </div>
+    </div>
+ </div>
+ 
+
+
+
+
+<!-- <div class="container">
+     <div class="container py-4">
+      <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow">
+                  <div class="card-header bg-primary text-white text-center">
+                      <h4>Add Staff</h4>
+                  </div>
+                  <div class="card-body">
+                      <form action="/addstafftab/" method="post">
+                          {% csrf_token %}
+                          
+                          <!-- Name Selection -->
+                          <!-- <div class="mb-3">
+                              <label for="rescueForces" class="form-label">Name</label>
+                              <select class="form-select" name="txtres" id="rescueForces" required>
+                                  <option value="POLICE">POLICE</option>
+                                  <option value="FIRE AND RESCUE SERVICE">FIRE AND RESCUE SERVICE</option>
+                                  <option value="COAST GUARD">COAST GUARD</option>
+                                  <option value="NDRF">NDRF</option>
+                                  <option value="VOLUNTEER">VOLUNTEER</option>
+                                  <option value="SDMA">SDMA</option>
+                                  <option value="HEALTHCARE & MEDICAL SERVICE">HEALTHCARE & MEDICAL SERVICE</option>
+                                  <option value="TRAUMA CARE">TRAUMA CARE</option>
+                              </select>
+                          </div>
+                           -->
+                          <!-- Address -->
+                          <!-- <div class="mb-3">
+                              <label for="address" class="form-label">Address</label>
+                              <textarea id="address" rows="3" class="form-control" name="txtaddess" placeholder="Enter your address" required></textarea>
+                          </div>
+                           -->
+                          <!-- Contact Number -->
+                          <!-- <div class="mb-3">
+                              <label for="contact" class="form-label">Contact Number</label>
+                              <input type="tel" id="contact" name="txtnum" class="form-control" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required>
+                          </div>
+                           -->
+                          <!-- District -->
+                          <!-- <div class="mb-3">
+                              <label for="district" class="form-label">District</label>
+                              <select id="district" name="txtdis" class="form-select" required>
+                                  <option value="" selected>-- Select District --</option>
+                                  <option value="Alappuzha">Alappuzha</option>
+                                  <option value="Ernakulam">Ernakulam</option>
+                                  <option value="Idukki">Idukki</option>
+                                  <option value="Kannur">Kannur</option>
+                                  <option value="Kasaragod">Kasaragod</option>
+                                  <option value="Kollam">Kollam</option>
+                                  <option value="Kottayam">Kottayam</option>
+                                  <option value="Kozhikode">Kozhikode</option>
+                                  <option value="Malappuram">Malappuram</option>
+                                  <option value="Palakkad">Palakkad</option>
+                                  <option value="Pathanamthitta">Pathanamthitta</option>
+                                  <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                                  <option value="Thrissur">Thrissur</option>
+                                  <option value="Wayanad">Wayanad</option>
+                              </select>
+                          </div>
+                           -->
+                          <!-- City -->
+                          <!-- <div class="mb-3">
+                              <label for="name" class="form-label">City</label>
+                              <input type="text" id="name" name="txtcty" class="form-control" placeholder="Enter city name" required>
+                          </div>
+                           -->
+                          <!-- Pincode -->
+                          <!-- <div class="mb-3">
+                              <label for="pincode" class="form-label">Pincode</label>
+                              <input type="text" id="pincode" name="pincode" class="form-control" maxlength="6" pattern="[0-9]{6}" required placeholder="123456">
+                          </div>
+                           -->
+                          <!-- Email -->
+                          <!-- <div class="mb-3">
+                              <label for="email" class="form-label">Email ID</label>
+                              <input type="email" id="email" name="txtemail" class="form-control" placeholder="Enter your email" required>
+                          </div>
+                           -->
+                          <!-- Username -->
+                          <!-- <div class="mb-3">
+                              <label for="username" class="form-label">Username</label>
+                              <input type="text" id="username" name="txtuser" class="form-control" placeholder="Choose a username" required>
+                          </div>
+                           -->
+                          <!-- Password -->
+                          <!-- <div class="mb-3">
+                              <label for="password" class="form-label">Password</label>
+                              <input type="password" id="password" name="txtpass" class="form-control" placeholder="Enter your password" required>
+                          </div>
+                           -->
+                          <!-- Submit Button -->
+                          <!-- <div class="d-grid">
+                              <button type="submit" class="btn btn-primary">Add</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->
+
+    {% endblock %}

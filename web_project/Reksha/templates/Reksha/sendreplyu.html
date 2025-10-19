@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reply Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<style>
+    /* Centering the form */
+/* Centering the form */
+.container {
+    margin-top: 60px;
+}
+
+/* Custom Card Styling */
+.reply-card {
+    border: none;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+    border-radius: 15px;
+    background: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.reply-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Styling */
+.reply-header {
+    background: linear-gradient(135deg, #594f8d, #453a75);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Input and Textarea Styling */
+.reply-input, 
+.reply-textarea {
+    border-radius: 10px;
+    border: 1px solid #c2b8e0;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #f9f9fb;
+    transition: all 0.3s ease-in-out;
+}
+
+.reply-input:focus, 
+.reply-textarea:focus {
+    border-color: #594f8d;
+    box-shadow: 0 0 12px rgba(89, 79, 141, 0.3);
+    background-color: #ffffff;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Button Styling */
+.reply-button {
+    background: linear-gradient(135deg, #594f8d, #453a75);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.reply-button:hover {
+    background: #453a75;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(89, 79, 141, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 30px;
+    }
+    .reply-card {
+        padding: 20px;
+    }
+    .reply-header {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+    .reply-button {
+        font-size: 1rem;
+    }
+}
+
+
+</style>
+<body>
+
+<div class="container">
+    <div class="col-md-6 mx-auto">
+        <div class="card reply-card">
+            <div class="card-header reply-header">
+                <h4 class="mb-0">Send a Reply</h4>
+            </div>
+            <div class="card-body">
+                <form action="/replyusr/" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Username</label>
+                        <input type="text" class="form-control reply-input" id="subject" name="username" value="{{ rpl.Username}}" placeholder="Enter subject" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control reply-input" id="subject"  value="{{rpl.subject}}" name="subject" placeholder="Enter subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control reply-textarea" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn reply-button">Send Reply</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

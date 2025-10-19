@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rescue Forces Registration</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* General body styling */
+    body {
+      background-color: #e9ecef; /* Light gray background */
+      font-family: 'Roboto', sans-serif; /* Clean and modern font */
+    }
+
+    /* Card styling */
+    .card {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow */
+      border-radius: 15px; /* Smoother corners */
+      overflow: hidden; /* Prevents content overflow */
+    }
+
+    /* Header styling */
+    .card-header {
+      background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient header */
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Form elements styling */
+    .form-control,
+    .form-select {
+      border-radius: 8px; /* Smooth input and select fields */
+      border: 1px solid #ced4da; /* Light border */
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: #007bff; /* Focus color for fields */
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Glow effect */
+    }
+
+    /* Button styling */
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3; /* Darker hover color */
+      transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    /* Container customization */
+    .container {
+      max-width: 600px;
+      margin-top: 50px;
+    }
+
+    /* Label styling */
+    label {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        Rescue Forces Registration
+      </div>
+      <div class="card-body">
+        <form>
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <!-- Mobile Number -->
+          <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" required>
+          </div>
+
+          <!-- Rescue Forces Dropdown -->
+          <div class="mb-3">
+            <label for="rescueForces" class="form-label">Rescue Force</label>
+            <select class="form-select" id="rescueForces" required>
+              <option selected disabled>Select Rescue Force</option>
+              <option value="fire">FIRE AND RESCUE SERVICE</option>
+              <option value="police">POLICE</option>
+              <option value="coast_guard">COAST GUARD</option>
+              <option value="ndrf">NDRF</option>
+              <option value="volunteer">VOLUNTEER</option>
+              <option value="sdma">SDMA</option>
+              <option value="healthcare">HEALTHCARE & MEDICAL SERVICE</option>
+              <option value="trauma">TRAUMA CARE</option>
+            </select>
+          </div>
+
+          <!-- Location -->
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" placeholder="Enter your location" required>
+          </div>
+
+          <!-- District Dropdown -->
+          <div class="mb-3">
+            <label for="district" class="form-label">District</label>
+            <select class="form-select" id="district" required>
+              <option selected disabled>Select District</option>
+              <option value="tvm">Thiruvananthapuram</option>
+              <option value="kollam">Kollam</option>
+              <option value="pta">Pathanamthitta</option>
+              <option value="alpy">Alappuzha</option>
+              <option value="kottayam">Kottayam</option>
+              <option value="ekm">Ernakulam</option>
+              <option value="tcr">Thrissur</option>
+              <option value="pkd">Palakkad</option>
+              <option value="mlp">Malappuram</option>
+              <option value="kkd">Kozhikode</option>
+              <option value="wnd">Wayanad</option>
+              <option value="knr">Kannur</option>
+              <option value="ksd">Kasaragod</option>
+            </select>
+          </div>
+
+          <!-- Pincode -->
+          <div class="mb-3">
+            <label for="pincode" class="form-label">Pincode</label>
+            <input type="text" class="form-control" id="pincode" placeholder="Enter your pincode" required>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

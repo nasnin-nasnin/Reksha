@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Side Navigation Bar</title>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <style>
+    /* nav */
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+   background-color: #f3f5f9;
+}
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar{
+  width: 200px;
+  height: 102%;
+  margin-top: -2%;
+  background: #4b4276;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.wrapper .sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+  color: #bdb8d7;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #594f8d;
+}
+    
+.wrapper .sidebar ul li:hover a{
+  color: #fff;
+}
+ 
+.wrapper .sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+  display: block;
+  width: 40px;
+  background: #594f8d;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #bdb8d7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-right: 10%;
+  margin-left: -10%;
+  margin-top: 3%;
+}
+
+.wrapper .main_content .header{
+  padding: 20px;
+  background: #fff;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+  
+}
+/* nav */
+
+.main {
+            margin-left: 0%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            margin-top: -2%;
+        }
+
+        .card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            background-color: #f8f9fa;
+        }
+
+        .card-header {
+            background-color: #594f8d;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-select,
+        input[type="text"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            transition: 0.3s ease-in-out;
+        }
+
+        .form-select:focus,
+        input:focus,
+        textarea:focus {
+            border-color: #594f8d;
+            box-shadow: 0 0 8px rgba(89, 79, 141, 0.3);
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+        }
+        @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+
+
+        .btn-primary {
+            background-color: #594f8d;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ebe4ed;
+            padding: 12px;
+            border-radius: 10px;
+            width: 250px;
+            transition: 0.3s ease-in-out;
+            display: block;
+            margin: 20px auto 0;
+            animation: blink 1s infinite;
+
+        }
+
+        .btn-primary:hover {
+            background-color: #453a75;
+        }
+        /* header */
+        .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 8%;
+    z-index: 1000;
+    background-color: #f8f9fa !important; /* Light background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #594f8d !important; /* Blue brand color */
+}
+
+.btn-outline-success {
+    border-color: #770b76 !important;
+    /* color: #6ab12b !important; */
+    /* transition: all 0.3s ease; */
+    background-color: #594f8d;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ebe4ed;
+    /* padding: 12px; */
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    margin-top:-8px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-outline-success:hover {
+    background-color: #990dc0 !important;
+    color: white !important;
+}
+
+.container-fluid {
+    padding: 10px 20px;
+}
+
+#navbarNav {
+    padding-left: 85%;
+    margin-top: -2%;
+    }
+    /* header */
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">REKSHA</a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <form class="container-fluid justify-content-start" action="/logoutadmin/" method="post">
+            {% csrf_token %}
+            <input  class="btn btn-outline-success me-2" type="submit" value="Log out">
+          </form>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+            <li><a href="{% url 'user' %}">Emergency situation</a></li>
+            <li><a href="{% url 'trackuser' %}">Tracking</a></li>
+            <li><a href="{% url 'ViewProfile' %}">View Profile</a></li>
+            <li><a href="{% url 'EditProfile' %}">Update Profile</a></li>
+            <li><a href="{% url 'feed' %}">Feedback & Complaints</a></li>
+            <li><a href="{% url 'userreplies' %}">Replies</a></li>
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="main_content">
+        <div class="info">
+          <div class="main">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h4>Emergency Help</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/emergency/" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="mobileNumber" class="form-label">Mobile Number</label>
+                            <input type="tel" id="mobileNumber" name="txtmob" class="form-control" placeholder="Enter your mobile number" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rescueForces" class="form-label">Situation</label>
+                            <select class="form-select" name="txtres" id="rescueForces" required>
+                                <option value="POLICE">POLICE</option>
+                                <option value="FIRE AND RESCUE SERVICE">FIRE AND RESCUE SERVICE</option>
+                                <option value="COAST GUARD">COAST GUARD</option>
+                                <option value="NDRF">NDRF</option>
+                                <option value="VOLUNTEER">VOLUNTEER</option>
+                                <option value="SDMA">SDMA</option>
+                                <option value="HEALTHCARE & MEDICAL SERVICE">HEALTHCARE & MEDICAL SERVICE</option>
+                                <option value="TRAUMA CARE">TRAUMA CARE</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Message" class="form-label">Message</label>
+                            <textarea id="Message" class="form-control" name="txtmes" rows="3" placeholder="Describe your situation" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" id="location" class="form-control" name="txtloc" placeholder="Enter your location or use GPS" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">I Need Help</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+</body>
+</html>
